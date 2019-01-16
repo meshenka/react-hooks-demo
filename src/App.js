@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import AlbumList from './components/AlbumList'
+import AlbumApp from './components/AlbumsApp'
 
 const App = () => {
   return (
@@ -19,7 +19,7 @@ const App = () => {
         >
           Learn React
         </a>
-        <AlbumList/>
+        <AlbumApp/>
       </header>
       
     </div>
