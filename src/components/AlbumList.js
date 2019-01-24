@@ -1,22 +1,27 @@
-import React from 'react'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
+import React from "react"
+import List from "@material-ui/core/List"
+import ListItem from "@material-ui/core/ListItem"
+import Button from "@material-ui/core/Button"
+import Grid from "@material-ui/core/Grid"
 
-const AlbumList = ({albums, displayAlbum}) => {
-  const listItems = albums.map((album, index) =>
+const AlbumList = ({ albums, displayAlbum }) => {
+  const listItems = albums.map((album, index) => (
     <ListItem key={index}>
-      <button onClick={e => {
-        displayAlbum(albums[index])}
-      } >{album.title}</button>
+      <Button
+        alt="Go to detail card"
+        onClick={() => {
+          displayAlbum(albums[index])
+        }}
+      >
+        {album.title}
+      </Button>
     </ListItem>
-  )
+  ))
 
   return (
-    <div className="AlbumList">
-      <List>
-        {listItems}
-      </List>
-    </div>
+    <Grid container xs={12} justify="center" spacing={24} className="AlbumList">
+      <List>{listItems}</List>
+    </Grid>
   )
 }
 
